@@ -20,8 +20,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    backdrop-filter: blur(4px);
-    
+    backdrop-filter: blur(4px); 
 }
 .navbar {
     background: rgba(0,0,0,6);
@@ -78,12 +77,13 @@ section {
     height: calc(100vh - 80px);
 }
 .container {
-    padding: 1rem 0;
+    padding: 2rem 1.5rem;
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    gap: 30px;
     background: linear-gradient(116.52deg, rgba(255, 255, 255, 0.22) -0.3%, rgba(255, 255, 255, 0.2) 81.34%);
     backdrop-filter: blur(20px);
     border-radius: 20px; 
@@ -135,8 +135,9 @@ form .btn {
     line-height: 19px;
     color: #FFFFFF;
     border-radius: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
+
 .container img {
     background-position: center;
     background-repeat: no-repeat;
@@ -145,14 +146,24 @@ form .btn {
     height: 100%;
 }
 
-@media (max-width: 991px) {
-
-    .container {
-        min-width: 320px;
-    }
+@media (max-width: 992px) {
 
     .navbar ul li a {
         font-size: 16px;
+    }
+
+    .container {
+        display: block;
+    }
+
+    form {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .container img {
+        display: none;
     }
 } 
 @media (max-width: 768px) {
@@ -187,22 +198,31 @@ form .btn {
     }
 }
 @media (max-width: 584px) {
+
+    section {
+        padding: 1rem 1.6rem;
+        width: 100%;
+        height: calc(100vh - 80px);
+    }
+    
     .container {
-        min-width: 320px;
+        padding: 1rem 0rem;
     }
-    form .user-details .input-box {
-        margin-bottom: 15px;
-        width: 100%;
+
+    form input {
+        padding: 10px 20px;
+        width: 250px;
+        height: 40px;
     }
-    form .gender-details .category {
-        width: 100%;
+
+    form .account-btn {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
     }
-    .container form .user-details {
-        max-height: 400px;
-        overflow-y: scroll;
-    }
-    .user-details::-webkit-scrollbar {
-        width: 0;
+    
+    form .account-btn button:first-child {
+        margin-top: 10px;
     }
 
 }
