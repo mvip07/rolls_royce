@@ -25,7 +25,7 @@ img{
 header{
     height: 100vh;
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4));
-    background-image: url("/images/rr13.jpg");
+    background-image: url("../images/rr13.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

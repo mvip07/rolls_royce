@@ -65,7 +65,7 @@ a.active,a:hover {
     min-height: calc(100vh - 80px);
     padding: 15px 100px;
     flex-direction: column;
-    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("/images/rr11.jpg");
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(".././images/rr11.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

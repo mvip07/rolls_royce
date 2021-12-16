@@ -4,14 +4,24 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+
+:root {
+    --Playfair: 'Playfair Display', serif;
+    --Quicksand: 'Quicksand', sans-serif;
+    --Roboto: 'Roboto', sans-serif;
+    --dark: #3c393d;
+    --exDark: #2b2b2b;
+}
+
 body {
-    overflow: hidden;
+    width: 100%;
     height: 100vh;
-    background-color: #2E2E2E;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;    
+    background: url("../images/signup-background.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(4px);
+    
 }
 .navbar {
     background: rgba(0,0,0,6);
@@ -62,189 +72,89 @@ a.active,a:hover {
     display: none;
 }
 
-.animation-container {
-    margin: 50px 0 0 0;
-    position: relative;
+section {
+    padding: 3rem 5rem;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.animation-container .ring {
-    position: relative;
-    width: 350px;
-    height: 100px;
-    border: 4px solid transparent;
-}
-
-.animation-container .ring::before {
-    content: "O";
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    color: #909090;
-    top: -15px;
-    left: -15px;
-    height: 25px;
-    width: 25px;
-    border-radius: 50%;
-    background: #24ecff;
-    box-shadow: 0 0 0 5px #24ecff33,
-        0 0 0 20px #24ecff22,
-        0 0 0 30px #24ecff11,
-        0 0 30px #24ecff,
-        0 0 60px #24ecff;
-    animation: animate 7s linear infinite;
-}
-
-.animation-container .ring::after {
-    content: "M";
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    color: #909090;
-    top: -12px;
-    right: -12px;
-    height: 25px;
-    width: 25px;
-    border-radius: 50%;
-    background: #93ff2d;
-    box-shadow: 0 0 0 5px #93ff2d33,
-        0 0 0 20px #93ff2d22,
-        0 0 0 30px #93ff2d11,
-        0 0 30px #93ff2d,
-        0 0 60px #93ff2d;
-    animation: animate2 7s linear infinite;
-}
-
-
-@keyframes animate {
-
-    0%,
-    100% {
-        right: 0%;
-        top: calc(0% - 15px);
-    }
-
-    25% {
-        left: calc(100% - 10px);
-        top: -15px;
-    }
-
-    50% {
-        left: calc(100% - 10px);
-        top: calc(100% - 15px);
-    }
-
-    75% {
-        left: calc(0% - 10px);
-        top: calc(100% - 15px);
-    }
-
-}
-
-@keyframes animate2 {
-
-    0% {
-        right: calc(0% - 12px);
-        bottom: 0%
-    }
-
-    25% {
-        top: calc(100% - 12px);
-        left: calc(100% - 12px);
-    }
-
-    50% {
-        left: calc(0% - 15px);
-        top: calc(100% - 15px);
-    }
-
-    75% {
-        left: calc(0% - 15px);
-        top: calc(-4% - 15px);
-    }
-
-    100% {
-        left: calc(100% - 15px);
-        bottom: 0%;
-    }
+    height: calc(100vh - 80px);
 }
 .container {
-    margin: 0 auto;
-    max-width: 450px;
-    min-width: 320px;
+    padding: 1rem 0;
     width: 100%;
-    padding: 0rem 3rem 0rem 3rem;
-    border-radius: 5px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: linear-gradient(116.52deg, rgba(255, 255, 255, 0.22) -0.3%, rgba(255, 255, 255, 0.2) 81.34%);
+    backdrop-filter: blur(20px);
+    border-radius: 20px; 
+}
+form h2 {
+    font-weight: bold;
+    font-size: 45px;
+    line-height: 67px;
+    color: #FFFFFF;
 }
 
-.container form .user-details {
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 20px 0 12px 0;
+form span {
+    display: block;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 22px;
+    color: #FFFFFF;
 }
-form .user-details .input-box {
-    width: 100%;
+
+form input {
+    padding: 10px 20px;
+    width: 350px;
+    height: 40px;
+    background: linear-gradient(92.01deg, rgba(255, 255, 255, 0.02) -8.99%, rgba(255, 255, 255, 0.14) 101.74%);
+    backdrop-filter: blur(40px);
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 16px;
+    color: rgba(255, 255, 255, 0,2);
     margin-bottom: 15px;
 }
-.user-details .input-box .details {
-    display: block;
-    font-weight: 700;
-    margin-bottom: 5px;
-    color: #2E2E2E;
-}
-.user-details .input-box input {
-    height: 45px;
-    width: 100%;
-    outline: none;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    padding-left: 15px;
-    font-size: 16px;
-    border-bottom-width: 2px;
-}
-.user-details .input-box input:focus,
-.user-details .input-box input:valid {
-    border-color: #9b59b6;
-}
-form .gender-details .gender-title {
-    font-size: 20px;
-    color: #2E2E2E;
-    font-weight: 700;
-    display: block;
-    margin-bottom: 10px;
-}
+
 form .button {
-    height: 45px;
-    margin: 45px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-form .button input {
-    height: 100%;
-    width: 100%;
-    outline: none;
-    color: #fff;
+
+form .btn {
+    padding: 9px 20px;
+    background: #000000;
+    backdrop-filter: blur(40px);
     border: none;
-    font-size: 18px;
-    font-weight: 500;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 19px;
+    color: #FFFFFF;
     border-radius: 5px;
-    letter-spacing: 1px;
-    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    margin-bottom: 20px;
 }
-form .button input:hover {
-    background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+.container img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 430px;
+    height: 100%;
 }
 
 @media (max-width: 991px) {
 
+    .container {
+        min-width: 320px;
+    }
+
     .navbar ul li a {
         font-size: 16px;
     }
-}
+} 
 @media (max-width: 768px) {
     .checkbtn {
         display: block;
@@ -278,7 +188,7 @@ form .button input:hover {
 }
 @media (max-width: 584px) {
     .container {
-        max-width: 100%;
+        min-width: 320px;
     }
     form .user-details .input-box {
         margin-bottom: 15px;
