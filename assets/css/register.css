@@ -21,6 +21,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     backdrop-filter: blur(4px); 
+    overflow: hidden;
 }
 .navbar {
     background: rgba(0,0,0,6);
@@ -179,6 +180,7 @@ form .btn {
         left: -100%;
         text-align: center;
         transition: all 0.5s;
+        z-index: 10000;
     }
     .navbar ul li {
         display: block;
