@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&family=Roboto:wght@400;500;700;900&display=swap');
+
+:root {
+    --Playfair: 'Playfair Display', serif;
+    --Quicksand: 'Quicksand', sans-serif;
+    --Roboto: 'Roboto', sans-serif;
+    --dark: #3c393d;
+    --exDark: #2b2b2b;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--Playfair);
+}
+.navbar {
+    background: rgba(0,0,0,6);
+    height: 80px;
+    width: 100%;
+}
+label.logo {
+    color: white;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 40px;
+    font-weight: bold;
+    font-family: var(--Playfair);
+}
+.navbar ul {
+    float: right;
+    margin-right: 20px;
+}
+.navbar ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+.navbar ul li a {
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: var(--Roboto);
+    letter-spacing: 3px;
+}
+a.active,a:hover {
+    background: #1b9bff;
+    transition: .5s;
+}
+.checkbtn {
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 20px;
+    cursor: pointer;
+    display: none;
+}
+#check {
+    display: none;
+}
+.contact {
+    min-height: calc(100vh - 80px);
+    padding: 15px 100px;
+    flex-direction: column;
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("/images/rr11.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.contact .content {
+    max-width: 800px;
+    text-align: center;
+}
+.contact .content h2 {
+    font-size: 36px;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 50px;
+}
+.contact .content p {
+    font-weight: 900;
+    color: #d9f5cd;
+}
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+.container .contactInfo {
+    width: 50%;
+    flex-direction: column;
+}
+.container .contactInfo .box {
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+}
+.container .contactInfo .box .icon {
+    min-width: 60px;
+    height: 60px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 22px;
+}
+.container .contactInfo .box .text {
+    display: flex;
+    margin-left: 20px;
+    font-size: 20px;
+    color: #42D000;
+    flex-direction: column;
+    font-weight: 700;
+}
+
+.container .contactInfo .box .text h3 {
+    font-weight: 500;
+    color: #00bcd4;
+}
+.contact-section {
+    padding: 40px 0;
+}
+.contact-section h1 {
+    text-align: center;
+    color: #ddd;
+}
+.border {
+    width: 100px;
+    height: 10px;
+    background: #33495e;
+    margin: 40px auto;
+}
+.contact-form {
+    max-width: 600px;
+    margin: auto;
+    padding: 0 10px;
+    overflow: hidden;
+}
+.contact-form-text {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 16px 0;
+    border: 0;
+    background: #222;
+    padding: 20px 40px;
+    outline: none;
+    color: #ddd;
+    transition: .5s;
+}
+.contact-form-text:focus {
+    box-shadow: 0 0 10px 4px #34495e;
+}
+textarea.contact-form-text {
+    resize: none;
+    height: 60px;
+}
+.contact-form-btn {
+    border: 0;
+    background: #33495e;
+    color: #fff;
+    padding: 12px 50px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+    margin-left: 50px;
+}
+.contact-form-btn:hover {
+   background: #2980b9;
+}
+
+@media (max-width: 991px) {
+    .navbar ul li a {
+        font-size: 16px;
+    }
+    .contact {
+        padding: 15px;
+    }
+    .container {
+        flex-direction: column;
+    }
+    .container .contactInfo {
+        margin-bottom: 40px;
+    }
+    .container .contactInfo,
+    .contactForm {
+        width: 100%;
+    }
+}
+@media (max-width: 768px) {
+    .contact {
+        padding: 15px;
+    }
+    .checkbtn {
+        display: block;
+        margin-top: 5px;
+    }
+    ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all 0.5s;
+        z-index: 100;
+    }
+    .navbar ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    .navbar ul li a {
+        font-size: 20px;
+    }
+    #check:checked ~ ul {
+        left: 0;
+    }
+}
+@media (max-width: 441px) {
+
+    .contact {
+        padding: 15px;
+    }
+    .contact .content h2 {
+        font-size: 30px;
+    }
+    .container .contactInfo .box {
+        position: relative;
+        padding: 8px;
+        display: block;
+    }
+    .container .contactInfo .box .icon {
+        width: 50px;
+        height: 50px;
+        background: #fff;
+    } 
+    ul {
+        width: 100%;
+    }
+}
